@@ -5,11 +5,15 @@ let gridDimension = 16;
 
 function createGrid(gridDimension) {
     container.textContent = "";
-    
     for(let i = 0; i < gridDimension; i++) {
+        let row = document.createElement("div");
+        row.style.display = "flex";
+        row.style.flex = "1 1 100%";
         for(let j = 0; j < gridDimension; j++) {
-            createCells(gridDimension);
+            let cell = createCells(gridDimension);
+            row.appendChild(cell);
         }
+        container.appendChild(row);
     }
 }
 function createCells(gridDimension) {
@@ -17,13 +21,14 @@ function createCells(gridDimension) {
     let div = document.createElement("div");
 
     div.classList.add("change");
-    div.style.flex = `1 0 ${100 / gridDimension}%`;
+    div.style.flex = "1";
     div.style.aspectRatio = "1";
-    container.appendChild(div);
 
     div.addEventListener("mouseover", () => {
        div.style.backgroundColor = color;
     });
+
+    return div;
 }
 
 
@@ -50,7 +55,3 @@ function getValidNumber() {
 
     return number;
 }
-
-
-
-
