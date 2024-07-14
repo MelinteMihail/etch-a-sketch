@@ -7,16 +7,21 @@
 body {
     display: flex;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-color: #111827;
+    gap: 75px;
 }
 
 .sizeBtn {
     font-size: 24px;
     padding: 10px;
-    margin-bottom: 100px;
-    position: relative;
+    transition: all 0.24s;
+}
+
+.sizeBtn:hover {
+    transform: scale(1.123);
 }
 
 .container {
@@ -26,6 +31,11 @@ body {
 }
 
 .change {
-    background-color: red;
+    background-color: #fff;
     border: 1.2px solid black;
+}
+
+.title {
+    color: #fff;
+    margin-top: 35px;
 }

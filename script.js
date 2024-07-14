@@ -16,7 +16,7 @@ for(let i = 0; i < 256; i++) {
 }
 
 btn.addEventListener("click", () => {
-    let gridDimension = prompt("Specify the grid size (i.e 24 means 24x24)");
+    let gridDimension = getValidNumber();
     container.textContent = "";
 
     for(let i = 0; i < gridDimension * gridDimension; i++) {
@@ -40,4 +40,12 @@ function randomColorCode() {
 
 function randomRGB() {
     return `rgb(${randomColorCode()},${randomColorCode()},${randomColorCode()})`;
+}
+function getValidNumber() {
+    let number;
+    do {
+        number = Number(prompt("Specify the grid size (maximum is 100!)"))
+    }while(number > 100 || number < 1 || isNaN(number));
+
+    return number;
 }
