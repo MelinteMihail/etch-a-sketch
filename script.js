@@ -2,6 +2,8 @@ let container = document.querySelector(".container");
 let btn = document.querySelector(".sizeBtn");
 
 for(let i = 0; i < 256; i++) {
+    const color = randomRGB();
+
     let div = document.createElement("div");
     div.classList.add("change");
     div.style.width = `${600/16}px`;
@@ -9,7 +11,7 @@ for(let i = 0; i < 256; i++) {
     container.appendChild(div);
 
     div.addEventListener("mouseover", () => {
-        div.style.backgroundColor = "blue";
+        div.style.backgroundColor = color;
     });
 }
 
@@ -18,6 +20,8 @@ btn.addEventListener("click", () => {
     container.textContent = "";
 
     for(let i = 0; i < gridDimension * gridDimension; i++) {
+        const color = randomRGB();
+        
         let div = document.createElement("div");
         div.classList.add("change");
         div.style.width = `${600/gridDimension}px`;
@@ -25,7 +29,15 @@ btn.addEventListener("click", () => {
         container.appendChild(div);
 
         div.addEventListener("mouseover", () => {
-            div.style.backgroundColor = "blue";
+            div.style.backgroundColor = color;
         });
     }
 });
+
+function randomColorCode() {
+    return Math.floor(Math.random() * 256);
+}
+
+function randomRGB() {
+    return `rgb(${randomColorCode()},${randomColorCode()},${randomColorCode()})`;
+}
