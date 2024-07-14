@@ -1,8 +1,11 @@
 let container = document.querySelector(".container");
-container.style.width = `${50*16}px`;
+let btn = document.querySelector(".sizeBtn");
+
 for(let i = 0; i < 256; i++) {
     let div = document.createElement("div");
     div.classList.add("change");
+    div.style.width = `${600/16}px`;
+    div.style.aspectRatio = "1";
     container.appendChild(div);
 
     div.addEventListener("mouseover", () => {
@@ -10,7 +13,27 @@ for(let i = 0; i < 256; i++) {
     });
 }
 
-for(let i = 0; i < gridDimension * gridDimension; i++) {
+btn.addEventListener("click", () => {
+    let gridDimension = prompt("Specify the grid size (i.e 24 means 24x24)");
+    container.textContent = "";
+
+    for(let i = 0; i < gridDimension * gridDimension; i++) {
+        let div = document.createElement("div");
+        div.classList.add("change");
+        div.style.width = `${600/gridDimension}px`;
+        div.style.aspectRatio = "1";
+        container.appendChild(div);
+
+        div.addEventListener("mouseover", () => {
+            div.style.backgroundColor = "blue";
+        });
+    }
+});
+
+
+
+
+/* for(let i = 0; i < gridDimension * gridDimension; i++) {
     let div = document.createElement("div");
     div.classList.add("change");
     container.appendChild(div);
@@ -18,4 +41,4 @@ for(let i = 0; i < gridDimension * gridDimension; i++) {
     div.addEventListener("mouseover", () => {
         div.style.backgroundColor = "blue";
     });
-}
+} */

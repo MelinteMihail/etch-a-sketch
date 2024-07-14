@@ -22,11 +22,10 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
+    width: 600px;
 }
 
 .change {
     background-color: red;
-    width: 50px;
-    height: 40px;
     border: 1.2px solid black;
 }
