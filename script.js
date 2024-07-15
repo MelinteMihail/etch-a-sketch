@@ -5,6 +5,7 @@ let gridDimension = 16;
 
 function createGrid(gridDimension) {
     container.textContent = "";
+    
     for(let i = 0; i < gridDimension; i++) {
         let row = document.createElement("div");
         row.style.display = "flex";
@@ -22,7 +23,6 @@ function createCells(gridDimension) {
 
     div.classList.add("change");
     div.style.flex = "1";
-    div.style.aspectRatio = "1";
 
     div.addEventListener("mouseover", () => {
        div.style.backgroundColor = color;
