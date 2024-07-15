@@ -5,7 +5,6 @@ let gridDimension = 16;
 
 function createGrid(gridDimension) {
     container.textContent = "";
-    
     for(let i = 0; i < gridDimension; i++) {
         let row = document.createElement("div");
         row.style.display = "flex";
