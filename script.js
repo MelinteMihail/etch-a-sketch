@@ -8,7 +8,7 @@ function createGrid(gridDimension) {
     for(let i = 0; i < gridDimension; i++) {
         let row = document.createElement("div");
         row.style.display = "flex";
-        row.style.flex = "1 1 100%";
+        row.style.flex = "1";
         for(let j = 0; j < gridDimension; j++) {
             let cell = createCells(gridDimension);
             row.appendChild(cell);
